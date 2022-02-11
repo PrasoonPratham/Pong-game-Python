@@ -2,7 +2,6 @@
 A simple ping pong game made with Pygame, taken from NeuralNine: https://www.youtube.com/watch?v=HNCAi0sjAz8&ab_channel=NeuralNine
 '''
 
-from turtle import Screen
 import pygame
 
 
@@ -39,6 +38,6 @@ ball_y_pos = HEIGHT / 2
 ball_width = 8
 ball_x_vel = -10
 
-Screen = pygame.display.set_mode((WIDTH, HEIGHT))
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
 
 #drawing objects
