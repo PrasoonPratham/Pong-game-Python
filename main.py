@@ -1,7 +1,9 @@
 '''
 A simple ping pong game made with Pygame, taken from NeuralNine: https://www.youtube.com/watch?v=HNCAi0sjAz8&ab_channel=NeuralNine
+Idk pygame, don't judge me :D
 '''
 
+from glob import glob
 import pygame
 
 
@@ -47,5 +49,21 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 def draw_objects():
     pygame.draw.rect(screen, WHITE, (int(p1_x_pos), int(p1_y_pos), paddle_width, paddle_height))
     pygame.draw.rect(screen, WHITE, (int(p2_x_pos), int(p2_y_pos), paddle_width, paddle_height))
-    pygame.draw.circle(screen, WHITE,(ball_x_pos,ball_y_pos), ball_width)
-    
+    pygame.draw.circle(screen, WHITE,(ball_x_pos, ball_y_pos),ball_width)
+
+    score = font.render(f"{str(p1_score)} - {str(p2_score)}", False, WHITE)
+    screen.blit(score, (WIDTH / 2,30))
+
+def apply_player_movement():
+    global p1_y_pos, p2_y_pos
+
+    if p1_up:
+        p1_y_pos = max(p1_y_pos - player_speed, 0)
+    if p1_down:
+        p1_y_pos = min(p1_y_pos + player_speed, HEIGHT)
+    if p2_up:
+        p2_y_pos = max(p2_y_pos - player_speed, 0)
+    if p2_down:
+        p2_y_pos = min(p2_y_pos + player_speed, HEIGHT)
+
+
