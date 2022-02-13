@@ -47,4 +47,5 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 def draw_objects():
     pygame.draw.rect(screen, WHITE, (int(p1_x_pos), int(p1_y_pos), paddle_width, paddle_height))
     pygame.draw.rect(screen, WHITE, (int(p2_x_pos), int(p2_y_pos), paddle_width, paddle_height))
-    pygame.draw.circle(screen, WHITE)
+    pygame.draw.circle(screen, WHITE,(ball_x_pos,ball_y_pos), ball_width)
+    
