@@ -6,12 +6,6 @@ I'm not great at game dev, don't judge me xD
 
 import pygame, sys, random
 
-# reset
-# game iteration
-# reward
-# play(action) - > direction
-# collision
-
 class Block(pygame.sprite.Sprite):
 	def __init__(self,path,x_pos,y_pos):
 		super().__init__()
